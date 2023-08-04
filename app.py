@@ -6,7 +6,13 @@ import os
 # Create an object named app
 app = Flask(__name__)
 
-conn_string = "Driver=/opt/microsoft/msodbcsql18/lib64/libmsodbcsql-18.2.so.2.1;Server=tcp:coyhub-db-eu.database.windows.net,1433;Database=phonebook;Uid=azureuser;Pwd=Test1234.;Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;"
+database_host = os.getenv('MSSQL_DATABASE_HOST')
+database_name = os.getenv('MSSQL_DATABASE')
+database_user = os.getenv('MSSQL_USER')
+database_password = os.getenv('MSSQL_PASSWORD')
+
+# Create the connection string
+conn_string = f"Driver=/opt/microsoft/msodbcsql18/lib64/libmsodbcsql-18.2.so.2.1;Server=tcp:{database_host},1433;Database={database_name};Uid={database_user};Pwd={database_password};Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;"
 
 conn = pyodbc.connect(conn_string)
 cursor = conn.cursor()
