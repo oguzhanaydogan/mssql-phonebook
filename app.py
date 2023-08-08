@@ -12,7 +12,7 @@ database_user = os.getenv('MSSQL_USER')
 database_password = os.getenv('MSSQL_PASSWORD')
 
 # Create the connection string
-conn_string = "Driver=/opt/microsoft/msodbcsql18/lib64/libmsodbcsql-18.2.so.1.1;Server=tcp:sql-01-dev.database.windows.net,1433;Database=phonebook;Uid=ekastar;Pwd=9+Pxr91Z<EEW;Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;"
+conn_string = "Driver=/opt/microsoft/msodbcsql18/lib64/libmsodbcsql-18.2.so.1.1;Server=tcp:sql-01-dev.database.windows.net,1433;Database=phonebook;Uid=ekastar;Pwd=6T!Bdt%t}1uw;Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;"
 
 conn = pyodbc.connect(conn_string)
 cursor = conn.cursor()
